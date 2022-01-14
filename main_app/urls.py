@@ -23,16 +23,22 @@ urlpatterns = [
     # 'dogs/<int:cat_id>/add_feeding/', - Add Feeding Route
     path('dogs/<int:dog_id>/add_feeding/', views.add_feeding, name='add_feeding'),
 
+    # 'dogs/<int:dog_id>/assoc_toy/<int:toy_id>/' - Associating toy to dog by id
     path('dogs/<int:dog_id>/assoc_toy/<int:toy_id>/', views.assoc_toy, name='assoc_toy'),
-
+    
+    # 'toys/' - Toy Index Route(listview)
     path('toys/', views.ToyList.as_view(), name='toys_index'),
 
+    # 'toys/<int:pk>/' - Toys Detail Route
     path('toys/<int:pk>/', views.ToyDetail.as_view(), name='toys_detail'),
-    
+
+    # 'toys/create/' - Toys Create Route
     path('toys/create/', views.ToyCreate.as_view(), name='toys_create'),
 
+    #  toys/<int:pk>/update/' - Toys Update Route
     path('toys/<int:pk>/update/', views.ToyUpdate.as_view(), name='toys_update'),
 
+    # toys/<int:pk>/delete/' - Toys Delete Route
     path('toys/<int:pk>/delete/', views.ToyDelete.as_view(), name='toys_delete'),
 
 
